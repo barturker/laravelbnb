@@ -2,7 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Bookable;
+use Database\Factories\BookableFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        DB::table('bookables')->truncate();
+
+        Bookable::factory(100)->create();
     }
 }
